@@ -2,18 +2,15 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const workout = new Schema({
+const workoutSchema = new Schema({
   workouttype: {
     enum: ["resistance", "cardio"],
-    description: "Please select one of the options."
   },
   cardioForm: {
     enum: ["running", "jogging"],
-    description: "Please select one of the options."
   },
   resistanceForm: {
     enum: ["Bicep Curl", "Lateral Pull", "Push Press", "Bench Press", "Quad Press", "Military Press"],
-    description: "Please select one of the options."
   },
   cardioName: {
     type: String,
@@ -68,6 +65,6 @@ const workout = new Schema({
   }
 });
 
-const workout = mongoose.model("workout", models);
+const workout = mongoose.model("workout", workoutSchema);
 
-module.exports = models;
+module.exports = workout;
