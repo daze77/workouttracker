@@ -14,6 +14,7 @@
   - [Tests Code](#tests-code)
   - [Images of the Appliication](#images-of-the-appliication)
   - [Access to Functional Applicaton](#access-to-functional-applicaton)
+  - [GitHub Direct Link:](#github-direct-link)
   - [Questions](#questions)
     
 ## Description
@@ -59,7 +60,9 @@ Please find screenshots and a brief video showcasing the application below
 A functioning version of the application can be found here [Heroku](https://bthfitnesstracker.herokuapp.com/stats)
 
 
+## GitHub Direct Link:  
 
+[Workout-Tracker-GitHub](https://github.com/daze77/workouttracker)
 
     
 ## Questions
