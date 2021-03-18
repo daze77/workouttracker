@@ -41,13 +41,13 @@
 ## Images of the Appliication
 Please find screenshots and a brief video showcasing the application below
 
-![WorkoutTracker Application](/assets/../Assets/images/ftHome.png)
+![WorkoutTracker Application](assets/images/ftHome.png)
 
-![WorkoutTracker Application - Dashboard](/assets/../Assets/images/ftDash.png)
+![WorkoutTracker Application - Dashboard](assets/images/ftDash.png)
 
-![WorkoutTracker Application - Adding Exercise](/assets/../Assets/images/ftAddExercise.png)
+![WorkoutTracker Application - Adding Exercise](assets/images/ftAddExercise.png)
 
-![WorkoutTracker Application - Adding Another Exercise](/assets/../Assets/images/ftAddExercise2.png)
+![WorkoutTracker Application - Adding Another Exercise](assets/images/ftAddExercise2.png)
 
 
 
