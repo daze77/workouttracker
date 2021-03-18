@@ -57,7 +57,7 @@ Please find screenshots and a brief video showcasing the application below
 
 ## Access to Functional Applicaton
 
-A functioning version of the application can be found here [Heroku](https://bthfitnesstracker.herokuapp.com/stats)
+A functioning version of the application can be found here [Heroku](https://bthfitnesstracker.herokuapp.com)
 
 
 ## GitHub Direct Link:  
