@@ -3,18 +3,20 @@ const Workout = require('../models/schema.js');
 
 
 router.get("/api/workouts", (req, res) => {
-  Workout.aggregate([
+  Workout.aggregate(
+    [
       {
           $addFields: {
-              totalDuration: {
-                  $sum: "$exercises.duration",
-              },
+              totalDuration: {$sum: "$exercises.duration"},
+              // totalWeight: {$sum: "$exercises.weight"}
           },
+
       }
-  ])
-  .then((Workout) => {
-      console.log(`[GET]`, Workout);
-      res.json(Workout);
+  ]
+  )
+  .then((dbWorkout) => {
+      console.log(`[GET]`, dbWorkout);
+      res.json(dbWorkout);
       })
       .catch((err) => {
           res.json(err);
@@ -23,31 +25,31 @@ router.get("/api/workouts", (req, res) => {
 })
   
 
-  router.get('/api/workouts/range', (req,res) => {
-    Workout.aggregate([
-        {
-           $addFields: {
-                totalDuration: {
-                    $sum: "$exercises.duration",
-              },
-            },
-        }
-    ])
-    .sort({ _id: -1 })
-    .limit(7)
-    .then((dbWorkout) => {
-        console.log(`[SUM]`, dbWorkout);
-        res.json(dbWorkout);
-        })
-        .catch((err) => {
-            res.json(err);
-        }
-    )
+router.get('/api/workouts/range', (req,res) => {
+  Workout.aggregate([
+      {
+          $addFields: {
+              totalDuration: {$sum: "$exercises.duration"},
+              totalWeight: {$sum: "$exercises.weight"}
+          },
+
+      }
+  ])
+  .sort({ _id: -1 })
+  .limit(7)
+  .then((dbWorkout) => {
+      console.log(`[SUM]`, dbWorkout);
+      res.json(dbWorkout);
+      })
+      .catch((err) => {
+          res.json(err);
+      }
+  )
 })
 
 router.put("/api/workouts/:id", async (req,res) => {
   try{
-      var updateWorkout = await Workout.findByIdAndUpdate(
+      const updateWorkout = await Workout.findByIdAndUpdate(
       {_id: req.params.id},
       {$push: { exercises:req.body}});
       res.json(updateWorkout)
@@ -55,8 +57,11 @@ router.put("/api/workouts/:id", async (req,res) => {
       console.log(error);
   }
 });
-router.post("/api/workouts", (req, res) => {
- Workout.create({})
+
+
+
+router.post("/api/workouts", ({body}, res) => {
+ Workout.create({body})
   .then(dbWorkout => {
       res.json(dbWorkout)
   })
@@ -65,12 +70,6 @@ router.post("/api/workouts", (req, res) => {
   })
 });
 
-
-
-
-    // app.get('/api/workouts/range', (req, res) => {
-    //     res.json(Workout)
-    // });
 
 
 
